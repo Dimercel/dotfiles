@@ -1,0 +1,8 @@
+[user]
+	name = Dimercel
+	email = xolcman@gmail.com
+[core]
+	autocrlf = false
+	safecrlf = false
+[push]
+	default = matching
