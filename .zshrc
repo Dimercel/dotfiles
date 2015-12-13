@@ -10,7 +10,6 @@ ZSH_THEME="agnoster"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias flac2mp3="for f in *.flac; do flac -cd $f | lame -b 320 - ${f%.*}.mp3; done"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -94,7 +93,6 @@ sbcl_compile(){
     buildapp --output $name --entry main --load $1 --compress-core
 }
 
-alias flac2mp3="for f in *.flac; do flac -cd "$f" | lame -b 320 - "${f%.*}".mp3; done"
 alias lispc=sbcl_compile
 
 #PATH="/home/xolcman/perl5/bin${PATH+:}${PATH}"; export PATH;
