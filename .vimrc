@@ -154,7 +154,7 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/neosnippe
 
 " Пользовательские функции
 function! g:AutoReadOnly()
-    if matchstr(bufname("%"), ".ro") != ''
+    if matchstr(bufname("%"), "\\.ro") != ''
         setlocal readonly
     endif
 
