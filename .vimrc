@@ -23,7 +23,8 @@ NeoBundle 'shawncplus/phpcomplete.vim'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'klen/python-mode'
-NeoBundle 'bling/vim-airline'
+NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'tpope/vim-fugitive'
@@ -138,13 +139,21 @@ let g:NERDChristmasTree=1
 " airline
 let g:airline_theme='light'
 
-let g:airline_enable_syntastic=1
-let g:airline_enable_bufferline=1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
 
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '◀'
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = '⮃'
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
 let g:airline_linecolumn_prefix = '¶ '
 let g:airline_paste_symbol = 'ρ'
+
+let g:airline_extensions = ['branch', 'syntastic', 'tagbar', 'hunks']
 
 " todo-vim
 let g:todo_winheight = 20
@@ -154,7 +163,7 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/neosnippe
 
 " Пользовательские функции
 function! g:AutoReadOnly()
-    if matchstr(bufname("%"), "\\.ro") != ''
+    if matchstr(bufname("%"), "\\.ro$") != ''
         setlocal readonly
     endif
 
