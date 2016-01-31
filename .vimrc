@@ -180,6 +180,8 @@ nmap <F3> :GundoToggle<CR>
 nmap <F4> :set hlsearch! hlsearch?<CR>
 nmap <F8>  :TagbarToggle<CR>
 nmap <silent> <Bslash><Bslash> :Unite buffer file<CR>
+nmap <leader>nh :GitGutterNextHunk<CR>
+nmap <leader>ph :GitGutterPrevHunk<CR>
 imap <c-space> <c-x><c-o>
 map <leader>e <C-Y>,
 nmap <leader>cp :CtrlPCmdPalette<CR>
