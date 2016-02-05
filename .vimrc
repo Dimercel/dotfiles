@@ -35,11 +35,12 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'dag/vim2hs'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'cakebaker/scss-syntax.vim'
-"NeoBundle 'Shougo/vimproc.vim', {'build' : {'linux': 'make'}}
+NeoBundle 'Shougo/vimproc.vim', {'build' : {'linux': 'make'}}
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'dyng/ctrlsf.vim'
 NeoBundle 'Dimercel/todo-vim'
 
 NeoBundle 'xolox/vim-reload'
@@ -213,6 +214,7 @@ imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 nmap <leader>t :TODOOpen<CR>
+map <leader>q <C-W>c
 map <Up>   <C-W>k
 map <Down> <C-W>j
 map <Left> <C-W>h
