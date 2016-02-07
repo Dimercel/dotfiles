@@ -206,6 +206,7 @@ nmap <leader>w+ <C-W>_
 nmap <leader>w- <C-W>1_
 nmap <leader>w> <C-W><Bar>
 nmap <leader>w< <C-W>1<Bar>
+nmap <leader>rf :e!<CR>
 nmap <F5> 4<C-W>>
 nmap <S-F5> 4<C-W><
 nmap <F6> 4<C-W>+
