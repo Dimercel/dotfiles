@@ -23,9 +23,11 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ;; auto-completion
-     ;; better-defaults
+     auto-completion
+     better-defaults
+     clojure
      emacs-lisp
+     slime
      git
      ;; markdown
      ;; org
@@ -249,7 +251,9 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
-  )
+)
+    ;(setq inferior-lisp-program "/usr/bin/sbcl")
+    ;(setq slime-contribs '(slime-fancy))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
