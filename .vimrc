@@ -41,6 +41,8 @@ NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'dyng/ctrlsf.vim'
+NeoBundle 'tpope/vim-fireplace'
+NeoBundle 'guns/vim-clojure-static'
 NeoBundle 'Dimercel/todo-vim'
 
 NeoBundle 'xolox/vim-reload'
