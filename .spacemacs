@@ -27,16 +27,19 @@ values."
      better-defaults
      clojure
      emacs-lisp
-     slime
      git
+     haskell
+     python
+     slime
+     sql
      ;; markdown
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     spell-checking
+     (spell-checking spell-checking-enable-by-default t)
      syntax-checking
-     ;; version-control
+     version-control
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -98,12 +101,13 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(zenburn
+                         monokai
                          spacemacs-dark
                          spacemacs-light
                          solarized-light
                          solarized-dark
                          leuven
-                         monokai)
+                         )
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
@@ -251,6 +255,12 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
+  ;; Imenu
+  (require 'imenu)
+  (setq imenu-auto-rescan      t)
+  (setq imenu-use-popup-menu nil)
+  (global-set-key (kbd "<f8>") 'imenu)
+
 )
     ;(setq inferior-lisp-program "/usr/bin/sbcl")
     ;(setq slime-contribs '(slime-fancy))
