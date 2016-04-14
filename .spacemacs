@@ -261,9 +261,9 @@ you should place you code here."
   (setq imenu-use-popup-menu nil)
   (global-set-key (kbd "<f8>") 'imenu)
 
+  (global-auto-complete-mode t)
+  (auto-complete-mode t)
 )
-    ;(setq inferior-lisp-program "/usr/bin/sbcl")
-    ;(setq slime-contribs '(slime-fancy))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
