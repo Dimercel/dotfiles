@@ -23,16 +23,24 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     auto-completion
+     (auto-completion
+       :variables
+       auto-completion-enable-snippets-in-popup t
+       auto-completion-enable-help-tooltip t)
      better-defaults
      clojure
+     colors
+     common-lisp
      emacs-lisp
      git
      haskell
+     html
+     latex
+     markdown
      python
-     slime
+     semantic
+     ;slime
      sql
-     ;; markdown
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
@@ -40,6 +48,7 @@ values."
      (spell-checking spell-checking-enable-by-default t)
      syntax-checking
      version-control
+     yaml
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -47,7 +56,9 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '()
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(color-theme-sanityinc-tomorrow
+                                    evil-terminal-cursor-changer
+                                    )
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
@@ -112,7 +123,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("DejaVu Sans Mono for Powerline for Powerline"
+   dotspacemacs-default-font '("Hack"
                                :size 10
                                :weight normal
                                :width normal
@@ -246,6 +257,7 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+    (add-to-list 'load-path "~/color-theme-sanityinc-tomorrow" t)
   )
 
 (defun dotspacemacs/user-config ()
@@ -263,6 +275,20 @@ you should place you code here."
 
   (global-auto-complete-mode t)
   (auto-complete-mode t)
+  (setq tab-always-indent 'complete)
+  (load (expand-file-name "~/quicklisp/slime-helper.el"))
+  (setq inferior-lisp-program "/usr/bin/sbcl")
+
+  ;; Make evil-mode up/down operate in screen lines instead of logical lines
+  (define-key evil-normal-state-map "j" 'evil-next-visual-line)
+  (define-key evil-normal-state-map "k" 'evil-previous-visual-line)
+  ;; Also in visual mode
+  (define-key evil-visual-state-map "j" 'evil-next-visual-line)
+  (define-key evil-visual-state-map "k" 'evil-previous-visual-line)
+
+  ;; Set theme
+  (require 'color-theme-sanityinc-tomorrow)
+  (color-theme-sanityinc-tomorrow--define-theme eighties)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will

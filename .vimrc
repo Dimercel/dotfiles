@@ -35,7 +35,6 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'dag/vim2hs'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'cakebaker/scss-syntax.vim'
-NeoBundle 'Shougo/vimproc.vim', {'build' : {'linux': 'make'}}
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'tpope/vim-surround'
@@ -78,7 +77,7 @@ set showmatch
 set autoread
 set lazyredraw
 set cursorline
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ for\ Powerline\ 10 "устанавливаем шрифт
+set guifont=Hack\ 10 "устанавливаем шрифт
 "set smartindent " Automatically indent when adding a curly bracket, etc.
 set incsearch " переход к искомому слову во время печати этого слова
 set guioptions-=T " убираем тулбар
