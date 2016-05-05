@@ -56,10 +56,7 @@ source $ZSH/oh-my-zsh.sh
 
 #source ~/perl5/perlbrew/etc/bashrc
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/xolcman/data/programm/ADT/sdk/platform-tools"
+export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
 export BROWSER="google-chrome-stable"
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -94,9 +91,3 @@ sbcl_compile(){
 }
 
 alias lispc=sbcl_compile
-
-#PATH="/home/xolcman/perl5/bin${PATH+:}${PATH}"; export PATH;
-#PERL5LIB="${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-#PERL_LOCAL_LIB_ROOT="/home/xolcman/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-#PERL_MB_OPT="--install_base \"/home/xolcman/perl5\""; export PERL_MB_OPT;
-#PERL_MM_OPT="INSTALL_BASE=/home/xolcman/perl5"; export PERL_MM_OPT;
