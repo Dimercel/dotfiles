@@ -26,6 +26,7 @@ values."
      (auto-completion
        :variables
        auto-completion-enable-snippets-in-popup t
+       auto-completion-private-snippets-directory "~/.emacs-env/snippets/"
        auto-completion-enable-help-tooltip t)
      better-defaults
      clojure
