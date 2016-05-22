@@ -289,6 +289,8 @@ you should place you code here."
   ;; Set theme
   (require 'color-theme-sanityinc-tomorrow)
   (color-theme-sanityinc-tomorrow--define-theme eighties)
+
+  (global-set-key (kbd "<f5>") 'helm-yas-complete)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
