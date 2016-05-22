@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: import_only
+# key: imponly
+# --
+(:import-from :#:${1:package} :#:${2:name})
