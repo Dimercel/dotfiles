@@ -91,3 +91,4 @@ sbcl_compile(){
 }
 
 alias lispc=sbcl_compile
+alias vim="vim --servername MASTER"
