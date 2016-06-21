@@ -38,6 +38,7 @@ values."
      html
      latex
      markdown
+     ocaml
      python
      semantic
      ;slime
