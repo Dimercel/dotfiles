@@ -78,20 +78,7 @@ export BROWSER="google-chrome-stable"
 
 #export TERM='xterm-256color'
 
-sbcl_compile(){
-    full_path="$1"
-    x="${1%%./}"
-    [[ $x = ./ ]] && full_path=${full_path:2}
-
-    x="${1%%.lisp}"
-    inx=${#x}
-    name=${full_path:0:$inx}
-
-    buildapp --output $name --entry main --load $1 --compress-core
-}
-
-alias lispc=sbcl_compile
 alias vim="vim --servername MASTER"
 
 # OPAM configuration
-. /home/xolcman/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+. $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
