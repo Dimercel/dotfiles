@@ -280,6 +280,11 @@ you should place you code here."
   (load (expand-file-name "~/quicklisp/slime-helper.el"))
   (setq inferior-lisp-program "/usr/bin/sbcl")
 
+  (setq ghc-ghc-options '("-fno-warn-missing-signatures")
+        haskell-compile-cabal-build-command "stack build --nix --fast"
+        haskell-process-type 'stack-ghci
+        haskell-process-path-ghci "stack")
+
   ;; Make evil-mode up/down operate in screen lines instead of logical lines
   (define-key evil-normal-state-map "j" 'evil-next-visual-line)
   (define-key evil-normal-state-map "k" 'evil-previous-visual-line)
