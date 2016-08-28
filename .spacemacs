@@ -56,7 +56,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(request)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(color-theme-sanityinc-tomorrow
                                     evil-terminal-cursor-changer
@@ -275,8 +275,6 @@ you should place you code here."
   (setq imenu-use-popup-menu nil)
   (global-set-key (kbd "<f8>") 'imenu)
 
-  (global-auto-complete-mode t)
-  (auto-complete-mode t)
   (setq tab-always-indent 'complete)
   (load (expand-file-name "~/quicklisp/slime-helper.el"))
   (setq inferior-lisp-program "/usr/bin/sbcl")
