@@ -36,10 +36,11 @@ values."
      git
      haskell
      html
+     javascript
      latex
      markdown
      ocaml
-     php
+     ;; php
      python
      semantic
      ;slime
@@ -58,6 +59,7 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(request
+                                      helm-smex
                                       haskell-emacs
                                       restclient)
    ;; A list of packages and/or extensions that will not be install and loaded.
@@ -299,6 +301,7 @@ you should place you code here."
   (color-theme-sanityinc-tomorrow--define-theme eighties)
 
   (global-set-key (kbd "<f5>") 'helm-yas-complete)
+  (setq dotspacemacs-helm-use-fuzzy 'source)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
