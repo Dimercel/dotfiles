@@ -63,7 +63,7 @@ set noiec
 
 " Selected color scheme
 
-colorscheme zenburn_1
+colorscheme zenburn_1.vifm
 
 " The FUSE_HOME directory will be used as a root dir for all FUSE mounts.
 " Unless it exists with write/exec permissions set, vifm will attempt to
@@ -75,7 +75,7 @@ set fusehome=/tmp/vifm_FUSE
 " TIME_STAMP_FORMAT=%m/%d-%H:%M
 " See man date or man strftime for details.
 
-set timefmt=%m/%d\ %H:%M
+set timefmt=%d/%m/%y\ %H:%M
 
 " Show list of matches on tab complition in command-line mode
 
@@ -168,7 +168,7 @@ command! reload :write | restart
 "filextype *.pdf zathura %c %i &, apvlv %c, xpdf %c
 filextype *.pdf,*.djvu evince %f &
 fileviewer *.pdf pdftotext -nopgbrk %c
-fileviewer *.php,*.c,*.tpl,*.inc,*.js,*.css,*.less,*.py,*.pl,*.pm,*.rb,*.hs,*.html highlight -O ansi -c xoria256 %f
+fileviewer *.php,*.c,*.tpl,*.inc,*.js,*.css,*.less,*.py,*.pl,*.pm,*.rb,*.hs,*.html,*.sql highlight -O ansi -s zenburn %f
 
 " PostScript
 filextype *.ps,*.eps,*.ps.gz
@@ -245,7 +245,7 @@ filetype *.asc
        \ !!gpg --verify %c,
 
 " Torrent
-filetype *.torrent ktorrent %f &
+filetype *.torrent deluge %f &
 fileviewer *.torrent dumptorrent -v %c
 
 " FuseZipMount

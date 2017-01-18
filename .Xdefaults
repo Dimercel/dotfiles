@@ -2,7 +2,7 @@ xterm*background: black
 xterm*foreground: white
 xterm*scrollBar: false
 xterm*saveLines: 1024
-xterm*faceName: DejaVu Sans Mono For Powerline For Powerline:antialias=true
+xterm*faceName: Hack:antialias=true
 xterm*faceSize: 10
 
 Xft.dpi: 96.0
@@ -81,7 +81,7 @@ URxvt*cursorColor:                    #EEE
 ! URxvt*pointerColor2:                  color
 ! URxvt*borderColor:                    color
 ! URxvt*iconFile:                       file
-URxvt*font:   xft:DejaVu Sans Mono for Powerline for Powerline:size=10:antialias=true:hinting=true
+URxvt*font:   xft:Hack:size=10:antialias=true:hinting=true
 ! URxvt*boldFont:                       fontname
 ! URxvt*italicFont:                     fontname
 ! URxvt*boldItalicFont:                 fontname
