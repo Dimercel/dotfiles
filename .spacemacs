@@ -301,6 +301,7 @@ you should place you code here."
   (color-theme-sanityinc-tomorrow--define-theme eighties)
 
   (global-set-key (kbd "<f5>") 'helm-yas-complete)
+  (evil-global-set-key 'normal (kbd "\\\\") 'helm-buffers-list)
   (setq dotspacemacs-helm-use-fuzzy 'source)
 )
 
