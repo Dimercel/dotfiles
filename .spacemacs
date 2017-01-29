@@ -278,7 +278,7 @@ you should place you code here."
   (require 'imenu)
   (setq imenu-auto-rescan      t)
   (setq imenu-use-popup-menu nil)
-  (global-set-key (kbd "<f8>") 'imenu)
+  (global-set-key (kbd "<f8>") 'spacemacs/helm-jump-in-buffer)
 
   (setq tab-always-indent 'complete)
   (load (expand-file-name "~/quicklisp/slime-helper.el"))
