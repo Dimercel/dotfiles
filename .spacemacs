@@ -300,6 +300,17 @@ you should place you code here."
   (require 'color-theme-sanityinc-tomorrow)
   (color-theme-sanityinc-tomorrow--define-theme eighties)
 
+  (setq org-todo-keywords
+        (quote ((sequence "TODO(t)" "INWORK(w)" "|" "DONE(d)")
+                (sequence "HOLD(h@/!)" "|" "CANCELLED(c@/!)"))))
+
+  (setq org-todo-keyword-faces
+        (quote (("TODO" :foreground "red" :weight bold)
+               ("DONE" :foreground "green" :weight bold)
+               ("INWORK" :foreground "blue" :weight bold)
+               ("HOLD" :foreground "magenta" :weight bold)
+               ("CANCELLED" :foreground "forest green" :weight bold))))
+
   (global-set-key (kbd "<f5>") 'helm-yas-complete)
   (evil-global-set-key 'normal (kbd "\\\\") 'helm-buffers-list)
   (evil-global-set-key 'normal (kbd "\\ag") 'helm-do-ag)

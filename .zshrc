@@ -56,7 +56,7 @@ source $ZSH/oh-my-zsh.sh
 
 #source ~/perl5/perlbrew/etc/bashrc
 
-export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
+export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/.local/bin"
 export BROWSER="google-chrome-stable"
 # export MANPATH="/usr/local/man:$MANPATH"
 
