@@ -281,12 +281,14 @@ you should place you code here."
   (global-set-key (kbd "<f8>") 'spacemacs/helm-jump-in-buffer)
 
   (setq tab-always-indent 'complete)
-  (load (expand-file-name "~/quicklisp/slime-helper.el"))
-  (setq inferior-lisp-program "/usr/bin/sbcl")
+  (load (expand-file-name "~/.roswell/helper.el"))
+  (setq inferior-lisp-program "ros -Q run")
 
   (setq ghc-ghc-options '("-fno-warn-missing-signatures")
-        haskell-compile-cabal-build-command "stack build --nix --fast"
+        haskell-compile-cabal-build-command "cd %s && stack build --nix --fast"
         haskell-process-type 'stack-ghci
+        haskell-interactive-popup-errors nil
+        haskell-process-args-stack-ghci '("--ghc-options=-ferror-spans" "--with-ghc=ghci-ng")
         haskell-process-path-ghci "stack")
 
   ;; Make evil-mode up/down operate in screen lines instead of logical lines
