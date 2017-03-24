@@ -76,9 +76,15 @@ export BROWSER="google-chrome-stable"
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-#export TERM='xterm-256color'
+export TERM='rxvt-unicode-256color'
 
 alias vim="vim --servername MASTER"
 
 # OPAM configuration
 . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+# pyenv configuration
+export PATH="$PATH:$HOME/.pyenv/bin"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
