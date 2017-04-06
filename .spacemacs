@@ -288,7 +288,7 @@ you should place you code here."
         haskell-compile-cabal-build-command "cd %s && stack build --nix --fast"
         haskell-process-type 'stack-ghci
         haskell-interactive-popup-errors nil
-        haskell-process-args-stack-ghci '("--ghc-options=-ferror-spans" "--with-ghc=ghci-ng")
+        haskell-process-args-stack-ghci '("--ghc-options=-ferror-spans")
         haskell-process-path-ghci "stack")
 
   ;; Make evil-mode up/down operate in screen lines instead of logical lines
