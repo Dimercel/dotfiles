@@ -290,6 +290,10 @@ you should place you code here."
         haskell-interactive-popup-errors nil
         haskell-process-args-stack-ghci '("--ghc-options=-ferror-spans")
         haskell-process-path-ghci "stack")
+  (setq haskell-completion-backend 'intero)
+  (with-eval-after-load 'intero
+    (flycheck-add-next-checker 'intero '(warning . haskell-hlint)))
+
 
   ;; Make evil-mode up/down operate in screen lines instead of logical lines
   (define-key evil-normal-state-map "j" 'evil-next-visual-line)
