@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: functor_ins
+# key: func_ins
+# --
+instance Functor TypeName where
+  -- (a -> b) -> f a -> f b
+  fmap f (TypeCons x) = TypeCons (f x)

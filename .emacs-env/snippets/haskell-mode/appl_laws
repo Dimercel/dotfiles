@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: appl_laws
+# key: appll
+# --
+pure id <*> v = v
+pure f <*> pure x = pure (f x)
+u <*> pure y = pure ($ y) <*> u
+u <*> (v <*> w) = pure (.) <*> u <*> v <*> w

@@ -1,0 +1,10 @@
+
+# -*- mode: snippet -*-
+# name: applicative_ins
+# key: appl_ins
+# --
+instance Applicative TypeName where
+  -- a -> f a
+  pure x = TypeCons x
+  -- f (a -> b) -> f a -> f b
+  (TypeCons f) <*> other = fmap f other

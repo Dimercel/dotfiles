@@ -1,0 +1,6 @@
+
+# -*- mode: snippet -*-
+# name: use_only
+# key: use_only
+# --
+(:use [package :only (function)])

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: functor_laws
+# key: funcl
+# --
+fmap id x = id x
+(f . g) x = fmap f(fmap g x)

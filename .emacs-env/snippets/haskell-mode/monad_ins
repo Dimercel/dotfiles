@@ -1,0 +1,8 @@
+
+# -*- mode: snippet -*-
+# name: monad_ins
+# key: monad_ins
+# --
+instance Monad TypeName where
+  -- m a -> (a -> m b) -> m b
+  TypeCons x >>= f = f x
