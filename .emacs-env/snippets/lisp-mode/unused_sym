@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: unused_sym
+# key: unused
+# --
+(declare (ignore ${0:sym}))
