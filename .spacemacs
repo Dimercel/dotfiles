@@ -43,6 +43,7 @@ values."
      ocaml
      ;; php
      python
+     racket
      semantic
      ;slime
      sql

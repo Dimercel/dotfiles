@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: unused_sym
+# name: unused-symbol
 # key: unused
 # --
 (declare (ignore ${0:sym}))

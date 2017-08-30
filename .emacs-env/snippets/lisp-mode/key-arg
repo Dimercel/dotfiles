@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: key-arg
+# key: key-arg
+# --
+&key (a nil) b
