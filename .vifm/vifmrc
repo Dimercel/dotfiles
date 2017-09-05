@@ -186,8 +186,8 @@ filextype *.djvu
 
 " Audio
 filetype *.wav,*.mp3,*.flac,*.ogg,*.m4a,*.wma,*.ape,*.ac3
-       \ {Play using MPlayer}
-       \ gnome-mplayer %f > /dev/null 2>&1 &,
+       \ {Play using mpv}
+       \ gnome-mpv %f > /dev/null 2>&1 &,
        \ {Play using ffplay}
        \ ffplay -nodisp %c,
        \ ffplay %c,
@@ -196,8 +196,8 @@ fileviewer *.flac soxi
 
 " Video
 filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.m2v,*.mov,*.webm,*.ts,*.m4v
-        \ {View using mplayer}
-        \ gnome-mplayer %f > /dev/null 2>&1 &,
+        \ {View using mpv}
+        \ gnome-mpv %f > /dev/null 2>&1 &,
         \ {View using ffplay}
         \ ffplay -fs %c,
         \ {View using Dragon}
