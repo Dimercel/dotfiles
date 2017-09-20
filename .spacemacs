@@ -43,6 +43,7 @@ values."
      ocaml
      ;; php
      python
+     (ruby :variables ruby-version-manager 'rvm)
      racket
      semantic
      ;slime
