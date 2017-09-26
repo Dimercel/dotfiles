@@ -324,6 +324,7 @@ you should place you code here."
   (evil-global-set-key 'normal (kbd "\\\\") 'helm-buffers-list)
   (evil-global-set-key 'normal (kbd "\\ag") 'helm-do-ag)
   (setq dotspacemacs-helm-use-fuzzy 'source)
+  (require 'helm-bookmark)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
