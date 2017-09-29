@@ -67,8 +67,7 @@ values."
                                       haskell-emacs
                                       restclient)
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '(color-theme-sanityinc-tomorrow
-                                    evil-terminal-cursor-changer)
+   dotspacemacs-excluded-packages '(evil-terminal-cursor-changer)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
@@ -127,8 +126,7 @@ values."
                          spacemacs-light
                          solarized-light
                          solarized-dark
-                         leuven
-                         )
+                         leuven)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
@@ -267,7 +265,6 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-    (add-to-list 'load-path "~/color-theme-sanityinc-tomorrow" t)
   )
 
 (defun dotspacemacs/user-config ()
@@ -305,10 +302,6 @@ you should place you code here."
   (define-key evil-visual-state-map "j" 'evil-next-visual-line)
   (define-key evil-visual-state-map "k" 'evil-previous-visual-line)
 
-  ;; Set theme
-  (require 'color-theme-sanityinc-tomorrow)
-  (color-theme-sanityinc-tomorrow--define-theme eighties)
-
   ;; Set org-mode
   (setq org-todo-keyword-faces
         (quote (("TODO" :foreground "red" :weight bold)
@@ -319,6 +312,18 @@ you should place you code here."
 
   (setq dotspacemacs-helm-use-fuzzy 'source)
   (require 'helm-bookmark)
+
+  ;; Fix problem with Python REPL
+  (setq python-shell-interpreter "python3")
+  (with-eval-after-load 'python
+    (defun python-shell-completion-native-try ()
+      "Return non-nil if can trigger native completion."
+      (let ((python-shell-completion-native-enable t)
+            (python-shell-completion-native-output-timeout
+             python-shell-completion-native-try-output-timeout))
+        (python-shell-completion-native-get-completions
+         (get-buffer-process (current-buffer))
+         nil "_"))))
 
   ;; User key-bindings
   (global-set-key (kbd "<f5>") 'helm-yas-complete)
