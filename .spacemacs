@@ -43,8 +43,9 @@ values."
      ocaml
      ;; php
      python
-     (ruby :variables ruby-version-manager 'rvm)
      racket
+     (ruby :variables ruby-version-manager 'rvm)
+     rust
      semantic
      ;slime
      sql
@@ -67,8 +68,7 @@ values."
                                       restclient)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(color-theme-sanityinc-tomorrow
-                                    evil-terminal-cursor-changer
-                                    )
+                                    evil-terminal-cursor-changer)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
@@ -281,9 +281,9 @@ you should place you code here."
   (require 'imenu)
   (setq imenu-auto-rescan      t)
   (setq imenu-use-popup-menu nil)
-  (global-set-key (kbd "<f8>") 'spacemacs/helm-jump-in-buffer)
 
   (setq tab-always-indent 'complete)
+
   (load (expand-file-name "~/.roswell/helper.el"))
   (setq inferior-lisp-program "ros -Q run")
 
@@ -309,10 +309,7 @@ you should place you code here."
   (require 'color-theme-sanityinc-tomorrow)
   (color-theme-sanityinc-tomorrow--define-theme eighties)
 
-  (setq org-todo-keywords
-        (quote ((sequence "TODO(t)" "INWORK(w)" "|" "DONE(d)")
-                (sequence "HOLD(h@/!)" "|" "CANCELLED(c@/!)"))))
-
+  ;; Set org-mode
   (setq org-todo-keyword-faces
         (quote (("TODO" :foreground "red" :weight bold)
                ("DONE" :foreground "green" :weight bold)
@@ -320,12 +317,12 @@ you should place you code here."
                ("HOLD" :foreground "magenta" :weight bold)
                ("CANCELLED" :foreground "forest green" :weight bold))))
 
-  (global-set-key (kbd "<f5>") 'helm-yas-complete)
-  (evil-global-set-key 'normal (kbd "\\\\") 'helm-buffers-list)
-  (evil-global-set-key 'normal (kbd "\\ag") 'helm-do-ag)
   (setq dotspacemacs-helm-use-fuzzy 'source)
   (require 'helm-bookmark)
-)
 
-;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.
+  ;; User key-bindings
+  (global-set-key (kbd "<f5>") 'helm-yas-complete)
+  (global-set-key (kbd "<f8>") 'spacemacs/helm-jump-in-buffer)
+  (evil-global-set-key 'normal (kbd "\\\\") 'helm-buffers-list)
+  (evil-global-set-key 'normal (kbd "\\ag") 'helm-do-ag)
+)
