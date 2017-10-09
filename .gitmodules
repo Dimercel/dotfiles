@@ -1,3 +1,0 @@
-[submodule ".emacs-env/color-theme-sanityinc-tomorrow"]
-	path = .emacs-env/color-theme-sanityinc-tomorrow
-	url = https://github.com/purcell/color-theme-sanityinc-tomorrow
