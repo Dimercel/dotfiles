@@ -49,7 +49,7 @@ values."
      semantic
      ;slime
      sql
-     ;; org
+     org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -302,13 +302,21 @@ you should place you code here."
   (define-key evil-visual-state-map "j" 'evil-next-visual-line)
   (define-key evil-visual-state-map "k" 'evil-previous-visual-line)
 
+  ;; Setting web-mode
+  (setq web-mode-markup-indent-offset 2)
+  (custom-set-faces
+   '(web-mode-html-tag-bracket-face ((t (:foreground "white")))))
+
   ;; Set org-mode
   (setq org-todo-keyword-faces
         (quote (("TODO" :foreground "red" :weight bold)
-               ("DONE" :foreground "green" :weight bold)
-               ("INWORK" :foreground "blue" :weight bold)
-               ("HOLD" :foreground "magenta" :weight bold)
-               ("CANCELLED" :foreground "forest green" :weight bold))))
+                ("DONE" :foreground "green" :weight bold)
+                ("INWORK" :foreground "blue" :weight bold)
+                ("HOLD" :foreground "magenta" :weight bold)
+                ("CANCELLED" :foreground "forest green" :weight bold))))
+  ;; Custom org-exporter to html
+  (load (expand-file-name "~/.emacs-env/org-export/org-github.el"))
+  (require 'org-github)
 
   (setq dotspacemacs-helm-use-fuzzy 'source)
   (require 'helm-bookmark)
