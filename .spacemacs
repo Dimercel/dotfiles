@@ -37,9 +37,11 @@ values."
      git
      haskell
      html
+     ivy
      javascript
      latex
      markdown
+     nginx
      ocaml
      ;; php
      python
@@ -64,6 +66,8 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(request
                                       helm-smex
+                                      helm-ag
+                                      helm-c-yasnippet
                                       haskell-emacs
                                       restclient)
    ;; A list of packages and/or extensions that will not be install and loaded.
@@ -321,6 +325,8 @@ you should place you code here."
   (setq dotspacemacs-helm-use-fuzzy 'source)
   (require 'helm-bookmark)
 
+  (setq ruby-insert-encoding-magic-comment nil)
+
   ;; Fix problem with Python REPL
   (setq python-shell-interpreter "python3")
   (with-eval-after-load 'python
@@ -335,7 +341,7 @@ you should place you code here."
 
   ;; User key-bindings
   (global-set-key (kbd "<f5>") 'helm-yas-complete)
-  (global-set-key (kbd "<f8>") 'spacemacs/helm-jump-in-buffer)
-  (evil-global-set-key 'normal (kbd "\\\\") 'helm-buffers-list)
+  (global-set-key (kbd "<f8>") 'imenu)
+  (evil-global-set-key 'normal (kbd"\\\\") 'helm-buffers-list)
   (evil-global-set-key 'normal (kbd "\\ag") 'helm-do-ag)
 )
