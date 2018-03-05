@@ -36,8 +36,9 @@ values."
      emacs-lisp
      git
      haskell
+     helm
      html
-     ivy
+     ;; ivy
      javascript
      latex
      markdown
@@ -299,6 +300,35 @@ you should place you code here."
     (flycheck-add-next-checker 'intero '(warning . haskell-hlint)))
 
 
+  ;; Copy/Paste in system buffer
+  (defun copy-to-clipboard ()
+    "Copies selection to x-clipboard."
+    (interactive)
+    (if (display-graphic-p)
+        (progn
+          (message "Yanked region to x-clipboard!")
+          (call-interactively 'clipboard-kill-ring-save))
+      (if (region-active-p)
+          (progn
+            (shell-command-on-region (region-beginning) (region-end) "xsel -i -b")
+            (message "Yanked region to clipboard!")
+            (deactivate-mark))
+        (message "No region active; can't yank to clipboard!"))))
+
+  (defun paste-from-clipboard ()
+    "Pastes from x-clipboard."
+    (interactive)
+    (if (display-graphic-p)
+        (progn
+          (clipboard-yank)
+          (message "graphics active"))
+      (if (region-active-p)
+          (progn
+            (delete-region (region-beginning) (region-end))
+            (insert (shell-command-to-string "xsel -o -b")))
+        (insert (shell-command-to-string "xsel -o -b")))))
+
+
   ;; Make evil-mode up/down operate in screen lines instead of logical lines
   (define-key evil-normal-state-map "j" 'evil-next-visual-line)
   (define-key evil-normal-state-map "k" 'evil-previous-visual-line)
@@ -343,5 +373,8 @@ you should place you code here."
   (global-set-key (kbd "<f5>") 'helm-yas-complete)
   (global-set-key (kbd "<f8>") 'imenu)
   (evil-global-set-key 'normal (kbd"\\\\") 'helm-buffers-list)
-  (evil-global-set-key 'normal (kbd "\\ag") 'helm-do-ag)
+  (evil-global-set-key 'normal (kbd "\\ ag") 'helm-do-ag)
+  (evil-global-set-key 'visual (kbd "\\ y") 'copy-to-clipboard)
+  (evil-global-set-key 'normal (kbd "\\ p") 'paste-from-clipboard)
+  (evil-global-set-key 'visual (kbd "\\ p") 'paste-from-clipboard)
 )
