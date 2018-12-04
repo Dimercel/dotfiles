@@ -70,7 +70,8 @@ values."
                                       helm-ag
                                       helm-c-yasnippet
                                       haskell-emacs
-                                      restclient)
+                                      restclient
+                                      yasnippet-snippets)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(evil-terminal-cursor-changer)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -369,6 +370,8 @@ you should place you code here."
          (get-buffer-process (current-buffer))
          nil "_"))))
 
+  (setq exec-path-from-shell-check-startup-files nil)
+
   ;; User key-bindings
   (global-set-key (kbd "<f5>") 'helm-yas-complete)
   (global-set-key (kbd "<f8>") 'imenu)
@@ -376,5 +379,4 @@ you should place you code here."
   (evil-global-set-key 'normal (kbd "\\ ag") 'helm-do-ag)
   (evil-global-set-key 'visual (kbd "\\ y") 'copy-to-clipboard)
   (evil-global-set-key 'normal (kbd "\\ p") 'paste-from-clipboard)
-  (evil-global-set-key 'visual (kbd "\\ p") 'paste-from-clipboard)
 )

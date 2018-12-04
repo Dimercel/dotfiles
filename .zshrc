@@ -97,3 +97,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # Add Rust
 export PATH="$PATH:$HOME/.cargo/bin"
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+
+# Add Maven
+export PATH="$PATH:/opt/maven/bin"
