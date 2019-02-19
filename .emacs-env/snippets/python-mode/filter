@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: filter
+# key: filter
+# --
+filter(lambda x: ${1:x > 0}, ${2:list}))

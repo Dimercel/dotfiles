@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: gen_list_if
+# key: gen_list_if
+# --
+[${1:x} if ${2:x} else ${3:not x} for x in ${4:list}]

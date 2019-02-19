@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: reduce
+# key: reduce
+# --
+reduce(lambda acc, x: ${1:acc + x}, ${2:list}, ${3:init}))

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: djg_path
+# key: djg_path
+# --
+from django.urls import path
+
+path(${1:'<param_name>/slug'}, ${2:view.as_view()})

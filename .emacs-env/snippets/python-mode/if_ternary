@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: if_ternary
+# key: if_ternary
+# --
+${2:'true'} if ${1:True} else ${3:'false'}

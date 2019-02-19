@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: djg_cls_based_view
+# key: djg_cls_based_view
+# --
+from django.views import View
+
+class ${1:YourView}(View):
+    template_name = ${2:"package/view.html"}
+
+    def get(self, request):
+        ${3:code here}
+
+        return render(request, self.template_name,
+                      {
+                      'data': data,
+                      })

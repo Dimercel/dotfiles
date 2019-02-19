@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: djg_raw_resp
+# key: djg_raw_resp
+# --
+from django.http import HttpResponse
+
+return HttpResponse(${1:'ok'})

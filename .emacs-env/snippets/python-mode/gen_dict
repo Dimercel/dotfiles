@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: gen_dict
+# key: gen_dict
+# --
+{key: value for (key, value) in ${1:iterable}}
