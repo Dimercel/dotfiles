@@ -118,7 +118,6 @@ set backspace=indent,eol,start " backspace обрабатывает отступ
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 
-autocmd vimenter * NERDTree " Вызываем плагин дерева
 let g:pymode_lint = 0
 
 set backupdir=~/.vim/backups
