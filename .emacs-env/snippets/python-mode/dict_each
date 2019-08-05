@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: dict_each
+# key: dict_each
+# --
+for ${1:key}, ${2:val} in ${3:dict}.items():

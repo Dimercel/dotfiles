@@ -1,0 +1,23 @@
+# -*- mode: snippet -*-
+# name: format_example
+# key: fmt_example
+# --
+"{:10}".format("foo bar") # "foo bar   "
+"foo {:03d}".format(9)    # "foo 009"
+"{:*^11}".format("foo")   # "****foo****"
+
+"{2}, {1}, {0}".format(2,1,0)                   # "0, 1, 2"
+"{val0}, {val1}".format(val0="foo", val1="bar") # "foo, bar"
+"{[1]}".format(["first", "second", "third"])    # "second"
+"{.name}".format(sys.stdin)
+"{[foo]}".format({"foo": "bar"})                # "bar"
+
+"{:x}".format(100)     # "64"
+"{:X}".format(255)     # "FF"
+"{:#x}".format(100)    # "0x64"
+"{:b}".format(10)      # "1010"
+"{:c}".format(100)     # "d"
+"{:d}".format(100)     # "100"
+"{:,}".format(1000000) # "1,000,000"
+"{:o}".format(10)      # "12"
+"{:.3}".format(0.214286) # "0.214"
