@@ -1,0 +1,16 @@
+
+# -*- mode: snippet -*-
+# name: import_list
+# key: imp_list
+# --
+import Mod
+import Mod ()
+import Mod (x,y, (+++))
+import qualified Mod
+import qualified Mod (x,y)
+import Mod hiding (x,y,(+++))
+import qualified Mod hiding (x,y)
+import Mod as Foo
+import Mod as Foo (x,y)
+import qualified Mod as Foo
+import qualified Mod as Foo (x,y)
