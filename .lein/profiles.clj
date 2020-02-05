@@ -3,4 +3,4 @@
                   [lein-ancient "0.6.10"]
                   [lein-environ "1.1.0"]
                   [lein-midje "3.2.1"]
-                  [cider/cider-nrepl "0.14.0"]]}}
+                  [cider/cider-nrepl "0.22.0"]]}}
