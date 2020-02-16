@@ -43,8 +43,6 @@ values."
      latex
      markdown
      nginx
-     ocaml
-     ;; php
      python
      racket
      (ruby :variables ruby-version-manager 'rvm)
