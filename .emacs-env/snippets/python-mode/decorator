@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: decorator
+# key: decorator
+# --
+from functools import wraps
+
+
+def ${1:decorator}(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        func(*args, **kwargs)
+
+    return wrapper
