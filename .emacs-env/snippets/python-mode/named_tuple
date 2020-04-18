@@ -4,4 +4,4 @@
 # --
 from collections import namedtuple
 
-${1:TypeName} = namedtuple('$1', '${0:attr1}', 'attr2')
+${1:TypeName} = namedtuple('$1', '${0:attr1 attr2}')
