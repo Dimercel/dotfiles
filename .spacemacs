@@ -370,6 +370,13 @@ you should place you code here."
 
   (setq exec-path-from-shell-check-startup-files nil)
 
+  ;; problem with evil-undo
+  (global-undo-tree-mode)
+  (evil-set-undo-system 'undo-tree)
+
+  (defun dotspacemacs-configuration-layers ()
+    '((ruby :variables ruby-test-runner 'rspec)))
+
   ;; User key-bindings
   (global-set-key (kbd "<f5>") 'helm-yas-complete)
   (global-set-key (kbd "<f8>") 'imenu)
