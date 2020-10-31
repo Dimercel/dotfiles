@@ -374,9 +374,6 @@ you should place you code here."
   (global-undo-tree-mode)
   (evil-set-undo-system 'undo-tree)
 
-  (defun dotspacemacs-configuration-layers ()
-    '((ruby :variables ruby-test-runner 'rspec)))
-
   ;; User key-bindings
   (global-set-key (kbd "<f5>") 'helm-yas-complete)
   (global-set-key (kbd "<f8>") 'imenu)
