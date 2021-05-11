@@ -35,7 +35,7 @@ values."
      common-lisp
      emacs-lisp
      git
-     haskell
+     (haskell :variables haskell-completion-backend 'dante)
      helm
      html
      ;; ivy
@@ -43,7 +43,7 @@ values."
      latex
      markdown
      nginx
-     python
+     (python :variables python-backend 'lsp python-lsp-server 'mspyls)
      racket
      (ruby :variables ruby-version-manager 'rvm)
      rust
@@ -294,10 +294,6 @@ you should place you code here."
         haskell-interactive-popup-errors nil
         haskell-process-args-stack-ghci '("--ghc-options=-ferror-spans")
         haskell-process-path-ghci "stack")
-  (setq haskell-completion-backend 'intero)
-  (with-eval-after-load 'intero
-    (flycheck-add-next-checker 'intero '(warning . haskell-hlint)))
-
 
   ;; Copy/Paste in system buffer
   (defun copy-to-clipboard ()
