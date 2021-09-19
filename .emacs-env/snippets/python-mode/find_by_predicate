@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: find_by_predicate
+# key: find_predicate
+# --
+next((x for x in ${1:seq} if ${2:predicate(x)}), None)
