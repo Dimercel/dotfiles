@@ -49,7 +49,7 @@ This function should only modify configuration layer settings."
      clojure
      colors
      common-lisp
-     csv
+     ;; csv
      emacs-lisp
      git
      (haskell :variables haskell-completion-backend 'dante)
@@ -60,6 +60,7 @@ This function should only modify configuration layer settings."
      helm
      javascript
      latex
+     (lsp :variables lsp-rust-server 'rls)
      markdown
      nginx
      (python :variables python-backend 'lsp python-lsp-server 'pyright)
@@ -69,16 +70,7 @@ This function should only modify configuration layer settings."
      semantic
      sql
      org
-     ;; lsp
-     ;; markdown
      multiple-cursors
-     ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     ;; spell-checking
-     ;; syntax-checking
-     ;; version-control
      treemacs
      (spell-checking spell-checking-enable-by-default t)
      syntax-checking
@@ -592,7 +584,7 @@ before packages are loaded."
   (setq tab-always-indent 'complete)
 
   (load (expand-file-name "~/.roswell/helper.el"))
-  (setq inferior-lisp-program "ros -Q run")
+  (setq inferior-lisp-programm "ros -Q run")
 
   (setq ghc-ghc-options '("-fno-warn-missing-signatures")
         haskell-compile-cabal-build-command "cd %s && stack build --nix --fast"
@@ -659,23 +651,8 @@ before packages are loaded."
 
   (setq ruby-insert-encoding-magic-comment nil)
 
-  ;; Fix problem with Python REPL
-  ;; (setq python-shell-interpreter "python3")
-  ;; (with-eval-after-load 'python
-  ;;   (defun python-shell-completion-native-try ()
-  ;;     "Return non-nil if can trigger native completion."
-  ;;     (let ((python-shell-completion-native-enable t)
-  ;;           (python-shell-completion-native-output-timeout
-  ;;            python-shell-completion-native-try-output-timeout))
-  ;;       (python-shell-completion-native-get-completions
-  ;;        (get-buffer-process (current-buffer))
-  ;;        nil "_"))))
-
-  ;; (setq exec-path-from-shell-check-startup-files nil)
-
-  ;; problem with evil-undo
-  ;; (global-undo-tree-mode)
-  ;; (evil-set-undo-system 'undo-tree)
+  (with-eval-after-load 'undo-tree
+    (setq undo-tree-auto-save-history nil))
 
   ;; User key-bindings
   (global-set-key (kbd "<f5>") 'helm-yas-complete)
@@ -684,7 +661,7 @@ before packages are loaded."
   (evil-global-set-key 'normal (kbd "\\ ag") 'helm-do-ag)
   (evil-global-set-key 'visual (kbd "\\ y") 'copy-to-clipboard)
   (evil-global-set-key 'normal (kbd "\\ p") 'paste-from-clipboard)
-  )
+)
 
 
 ;; Do not write anything past this comment. This is where Emacs will
