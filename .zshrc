@@ -78,30 +78,19 @@ export BROWSER="google-chrome-stable"
 
 export TERM='rxvt-unicode-256color'
 
-alias vim="vim --servername MASTER"
-
-# OPAM configuration
-. $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
 # pyenv configuration
-export PATH="$PATH:$HOME/.pyenv/bin"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 export PATH="$PATH:$HOME/.cask/bin"
-source $HOME/.rvm/scripts/rvm
 
 # Add Rust
 export PATH="$PATH:$HOME/.cargo/bin"
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
-# Add Maven
-export PATH="$PATH:/opt/maven/bin"
-
 # NVM Paths
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
