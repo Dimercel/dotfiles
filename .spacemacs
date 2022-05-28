@@ -50,39 +50,31 @@ This function should only modify configuration layer settings."
      colors
      common-lisp
      csv
-     emacs-lisp
      git
      (haskell :variables haskell-completion-backend 'dante)
      helm
      html
      emacs-lisp
-     ;; git
      helm
      javascript
      latex
      (lsp :variables lsp-rust-server 'rls)
      markdown
+     multiple-cursors
      nginx
+     org
      (python :variables python-backend 'lsp python-lsp-server 'pyright)
      racket
      (ruby :variables ruby-version-manager 'rvm)
      rust
      semantic
-     sql
-     org
-     ;; lsp
-     ;; markdown
-     multiple-cursors
-     ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     ;; spell-checking
-     ;; syntax-checking
-     ;; version-control
-     treemacs
      (spell-checking spell-checking-enable-by-default t)
+     sql
      syntax-checking
+     treemacs
      version-control
      yaml
      )
