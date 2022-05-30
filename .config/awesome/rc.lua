@@ -42,7 +42,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(awful.util.get_themes_dir() .. "xolcman/theme.lua")
+beautiful.init(awful.util.get_themes_dir() .. "zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
@@ -368,6 +368,7 @@ clientkeys = awful.util.table.join(
     awful.key({ }, "XF86AudioMute",  function () awful.util.spawn("amixer set Master toggle")  end),
     awful.key({ }, "XF86AudioRaiseVolume",  function () awful.util.spawn("amixer set Master 5%+")  end),
     awful.key({ }, "XF86AudioLowerVolume",  function () awful.util.spawn("amixer set Master 5%-")  end),
+
     awful.key({ modkey,           }, "f",
         function (c)
             c.fullscreen = not c.fullscreen
