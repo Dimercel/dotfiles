@@ -49,18 +49,17 @@ This function should only modify configuration layer settings."
      clojure
      colors
      common-lisp
-     ;; csv
+     csv
      emacs-lisp
      git
      (haskell :variables haskell-completion-backend 'dante)
      helm
      html
      emacs-lisp
-     ;; git
-     helm
      javascript
      latex
      (lsp :variables lsp-rust-server 'rls)
+     lua
      markdown
      nginx
      (python :variables python-backend 'lsp python-lsp-server 'pyright)
@@ -71,9 +70,10 @@ This function should only modify configuration layer settings."
      sql
      org
      multiple-cursors
-     treemacs
      (spell-checking spell-checking-enable-by-default t)
      syntax-checking
+     treemacs
+     typescript
      version-control
      yaml
      )
@@ -116,6 +116,10 @@ This function should only modify configuration layer settings."
 This function is called at the very beginning of Spacemacs startup,
 before layer configuration.
 It should only modify the values of Spacemacs settings."
+  ;; (setq configuration-layer-elpa-archives
+  ;;  '(("melpa" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/melpa/")
+  ;;  ("org" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/org/")
+  ;;  ("gnu" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/gnu/")))
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
