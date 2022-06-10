@@ -136,6 +136,14 @@ mymem = lain.widget.mem({
     timeout = 1
 })
 
+mybattery = lain.widget.cpu({
+    settings = function()
+      local battery = io.popen("upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -m 1 percentage | grep -Po \"\\d+\""):read("*all")
+      widget:set_text(" bat: "..battery:gsub("\n", "").."% ")
+    end,
+    timeout = 1
+})
+
 myvolume = lain.widget.alsa({
     settings = function()
         if volume_now.status == "on" then
@@ -146,6 +154,8 @@ myvolume = lain.widget.alsa({
     end,
     timeout = 1
 })
+
+
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = awful.util.table.join(
@@ -241,6 +251,7 @@ awful.screen.connect_for_each_screen(function(s)
             s.mypromptbox,
             mycpu.widget,
             mymem.widget,
+            mybattery.widget,
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
