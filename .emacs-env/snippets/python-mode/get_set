@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: get_set
+# key: get_set
+# --
+@property
+def ${1:my_prop}(self):
+    return self._$1
+
+@my_prop.setter
+def $1(self, value):
+    pass
