@@ -58,7 +58,8 @@ This function should only modify configuration layer settings."
      emacs-lisp
      javascript
      latex
-     (lsp :variables lsp-rust-server 'rls)
+     (lsp :variables lsp-rust-server 'rust-analyzer
+          cargo-process-reload-on-modify t)
      lua
      markdown
      nginx
@@ -94,6 +95,7 @@ This function should only modify configuration layer settings."
                                       haskell-emacs
                                       lsp-pyright
                                       restclient
+                                      sqlite3
                                       yasnippet-snippets)
 
    ;; A list of packages that cannot be updated.
@@ -580,6 +582,15 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
+
+  ;; User key-bindings
+  (global-set-key (kbd "<f5>") 'helm-yas-complete)
+  (global-set-key (kbd "<f8>") 'imenu)
+  (evil-global-set-key 'normal (kbd"\\\\") 'helm-buffers-list)
+  (evil-global-set-key 'normal (kbd "\\ ag") 'helm-do-ag)
+  (evil-global-set-key 'visual (kbd "\\ y") 'copy-to-clipboard)
+  (evil-global-set-key 'normal (kbd "\\ p") 'paste-from-clipboard)
+
   ;; Imenu
   (require 'imenu)
   (setq imenu-auto-rescan t)
@@ -646,25 +657,11 @@ before packages are loaded."
                 ("HOLD" :foreground "magenta" :weight bold)
                 ("CANCELLED" :foreground "forest green" :weight bold))))
 
-  ;; Custom org-exporter to html
-  (load (expand-file-name "~/.emacs-env/org-export/org-github.el"))
-  (require 'org-github)
-
   (setq dotspacemacs-helm-use-fuzzy 'source)
   (require 'helm-bookmark)
 
-  (setq ruby-insert-encoding-magic-comment nil)
-
   (with-eval-after-load 'undo-tree
     (setq undo-tree-auto-save-history nil))
-
-  ;; User key-bindings
-  (global-set-key (kbd "<f5>") 'helm-yas-complete)
-  (global-set-key (kbd "<f8>") 'imenu)
-  (evil-global-set-key 'normal (kbd"\\\\") 'helm-buffers-list)
-  (evil-global-set-key 'normal (kbd "\\ ag") 'helm-do-ag)
-  (evil-global-set-key 'visual (kbd "\\ y") 'copy-to-clipboard)
-  (evil-global-set-key 'normal (kbd "\\ p") 'paste-from-clipboard)
 )
 
 
