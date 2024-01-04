@@ -68,6 +68,7 @@ This function should only modify configuration layer settings."
      (ruby :variables ruby-version-manager 'rvm)
      rust
      semantic
+     (svelte :variables svelte-backend 'lsp)
      sql
      org
      multiple-cursors
