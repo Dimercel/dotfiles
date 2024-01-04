@@ -141,7 +141,7 @@ mybattery = lain.widget.cpu({
       local battery = io.popen("upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -m 1 percentage | grep -Po \"\\d+\""):read("*all")
       widget:set_text(" bat: "..battery:gsub("\n", "").."% ")
     end,
-    timeout = 1
+    timeout = 5
 })
 
 myvolume = lain.widget.alsa({

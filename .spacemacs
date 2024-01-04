@@ -56,9 +56,11 @@ This function should only modify configuration layer settings."
      html
      emacs-lisp
      helm
-     javascript
+     (javascript :variables javascript-backend 'lsp)
+     json
      latex
-     (lsp :variables lsp-rust-server 'rls)
+     (lsp :variables lsp-rust-server 'rust-analyzer
+          cargo-process-reload-on-modify t)
      markdown
      multiple-cursors
      nginx
@@ -72,9 +74,11 @@ This function should only modify configuration layer settings."
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      (spell-checking spell-checking-enable-by-default t)
+     (svelte :variables svelte-backend 'lsp)
      sql
      syntax-checking
      treemacs
+     (typescript :variables typescript-backend 'lsp)
      version-control
      yaml
      )
@@ -93,8 +97,10 @@ This function should only modify configuration layer settings."
                                       helm-ag
                                       helm-c-yasnippet
                                       haskell-emacs
+                                      gnu-elpa-keyring-update
                                       lsp-pyright
                                       restclient
+                                      sqlite3
                                       yasnippet-snippets)
 
    ;; A list of packages that cannot be updated.
@@ -117,10 +123,11 @@ This function should only modify configuration layer settings."
 This function is called at the very beginning of Spacemacs startup,
 before layer configuration.
 It should only modify the values of Spacemacs settings."
+
   (setq configuration-layer-elpa-archives
-   '(("melpa" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/melpa/")
-   ("org"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/org/")
-   ("gnu"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/gnu/")))
+    '(("melpa" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/melpa/")
+      ("org"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/org/")
+      ("gnu"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/gnu/")))
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
@@ -655,24 +662,6 @@ before packages are loaded."
   (require 'helm-bookmark)
 
   (setq ruby-insert-encoding-magic-comment nil)
-
-  ;; Fix problem with Python REPL
-  ;; (setq python-shell-interpreter "python3")
-  ;; (with-eval-after-load 'python
-  ;;   (defun python-shell-completion-native-try ()
-  ;;     "Return non-nil if can trigger native completion."
-  ;;     (let ((python-shell-completion-native-enable t)
-  ;;           (python-shell-completion-native-output-timeout
-  ;;            python-shell-completion-native-try-output-timeout))
-  ;;       (python-shell-completion-native-get-completions
-  ;;        (get-buffer-process (current-buffer))
-  ;;        nil "_"))))
-
-  ;; (setq exec-path-from-shell-check-startup-files nil)
-
-  ;; problem with evil-undo
-  ;; (global-undo-tree-mode)
-  ;; (evil-set-undo-system 'undo-tree)
 
   ;; User key-bindings
   (global-set-key (kbd "<f5>") 'helm-yas-complete)
