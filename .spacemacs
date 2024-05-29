@@ -94,6 +94,7 @@ This function should only modify configuration layer settings."
                                       helm-ag
                                       helm-c-yasnippet
                                       haskell-emacs
+                                      gnu-elpa-keyring-update
                                       lsp-pyright
                                       restclient
                                       sqlite3
@@ -119,10 +120,10 @@ This function should only modify configuration layer settings."
 This function is called at the very beginning of Spacemacs startup,
 before layer configuration.
 It should only modify the values of Spacemacs settings."
-  ;; (setq configuration-layer-elpa-archives
-  ;;  '(("melpa" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/melpa/")
-  ;;  ("org" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/org/")
-  ;;  ("gnu" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/gnu/")))
+  (setq configuration-layer-elpa-archives
+        '(("melpa" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/melpa/")
+          ("org" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/org/")
+          ("gnu" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/gnu/")))
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
