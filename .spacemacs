@@ -46,7 +46,6 @@ This function should only modify configuration layer settings."
       auto-completion-private-snippets-directory "~/.emacs-env/snippets/"
       auto-completion-enable-help-tooltip t)
      better-defaults
-     clojure
      colors
      common-lisp
      csv
@@ -64,8 +63,6 @@ This function should only modify configuration layer settings."
      markdown
      nginx
      (python :variables python-backend 'lsp python-lsp-server 'pyright)
-     racket
-     (ruby :variables ruby-version-manager 'rvm)
      rust
      semantic
      (svelte :variables svelte-backend 'lsp)
@@ -75,7 +72,6 @@ This function should only modify configuration layer settings."
      (spell-checking spell-checking-enable-by-default t)
      syntax-checking
      treemacs
-     typescript
      version-control
      yaml
      )
@@ -90,15 +86,15 @@ This function should only modify configuration layer settings."
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(request
-                                      helm-smex
-                                      helm-ag
-                                      helm-c-yasnippet
-                                      haskell-emacs
-                                      gnu-elpa-keyring-update
-                                      lsp-pyright
-                                      restclient
-                                      sqlite3
-                                      yasnippet-snippets)
+                                       helm-smex
+                                       helm-ag
+                                       helm-c-yasnippet
+                                       haskell-emacs
+                                       gnu-elpa-keyring-update
+                                       lsp-pyright
+                                       restclient
+                                       sqlite3
+                                       yasnippet-snippets)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -120,10 +116,10 @@ This function should only modify configuration layer settings."
 This function is called at the very beginning of Spacemacs startup,
 before layer configuration.
 It should only modify the values of Spacemacs settings."
-  (setq configuration-layer-elpa-archives
-        '(("melpa" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/melpa/")
-          ("org" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/org/")
-          ("gnu" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/gnu/")))
+  ;; (setq configuration-layer-elpa-archives
+  ;;       '(("melpa" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/melpa/")
+  ;;         ("org" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/org/")
+  ;;         ("gnu" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/gnu/")))
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
@@ -664,7 +660,7 @@ before packages are loaded."
 
   (with-eval-after-load 'undo-tree
     (setq undo-tree-auto-save-history nil))
-)
+  )
 
 
 ;; Do not write anything past this comment. This is where Emacs will
